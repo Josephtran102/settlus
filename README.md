@@ -23,8 +23,7 @@ sed -i -e "s|^node *=.*|node = \"tcp://localhost:${SETTLUS_PORT}657\"|" $HOME/.s
 ```
 ```
 settlusd init $MONIKER \
---chain-id $SETTLUS_CHAIN_ID \
---home $HOME/.settlus \
+--chain-id $SETTLUS_CHAIN_ID
 ```
 # download genesis
 ```
