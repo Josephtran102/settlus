@@ -79,5 +79,5 @@ EOF
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable settlusd
-sudo systemctl restart settlusd && sudo journalctl -u settlusd -f
+sudo systemctl restart settlusd && sudo journalctl -u settlusd -f -o cat
 ```
