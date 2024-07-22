@@ -3,7 +3,7 @@ set vars
 ```
 echo "export WALLET="joseph"" >> $HOME/.bash_profile
 echo "export MONIKER="JosephTran"" >> $HOME/.bash_profile
-echo "export SETTLUS_CHAIN_ID="settlus_5372-1"" >> $HOME/.bash_profile
+echo "export SETTLUS_CHAIN_ID="settlus_5372-2"" >> $HOME/.bash_profile
 echo "export SETTLUS_PORT="52"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
