@@ -58,3 +58,26 @@ sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.001amf"|g' $HOME/.settl
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.settlus/config/config.toml
 sed -i -e "s/^indexer =.*/indexer = \"null\"/" $HOME/.settlus/config/config.toml
 ```
+# create service file
+```
+sudo tee /etc/systemd/system/settlusd.service > /dev/null <<EOF
+[Unit]
+Description=Settlus node
+After=network-online.target
+[Service]
+User=$USER
+WorkingDirectory=$HOME/.settlus
+ExecStart=$(which junctiond) start --home $HOME/.settlus
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+# enable and start service
+```
+sudo systemctl daemon-reload
+sudo systemctl enable settlusd
+sudo systemctl restart settlusd && sudo journalctl -u junctiond -f
+```
