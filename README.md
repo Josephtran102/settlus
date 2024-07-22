@@ -67,7 +67,7 @@ After=network-online.target
 [Service]
 User=$USER
 WorkingDirectory=$HOME/.settlus
-ExecStart=$(which junctiond) start --home $HOME/.settlus
+ExecStart=$(which settlusd) start --home $HOME/.settlus
 Restart=on-failure
 RestartSec=5
 LimitNOFILE=65535
